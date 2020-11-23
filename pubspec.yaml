@@ -24,6 +24,8 @@ dependencies:
   flutter:
     sdk: flutter
   http: ^0.12.2
+  firebase_database: ^4.3.0
+
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -46,9 +48,30 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
+  assets:
+    - assets/images/chrom.png
+    - assets/images/ganondorf.png
+    - assets/images/lucina.png
+    - assets/images/mario.png
+    - assets/images/meta_knight.png
+    - assets/images/mewtwo.png
+    - assets/images/mr_game_and_watch.png
+    - assets/images/pit.png
+    - assets/images/roy.png
+    - assets/images/young_link.png
+    - assets/images/bowser.png
+    - assets/images/donkey_kong.png
+    - assets/images/dr_mario.png
+    - assets/images/falco.png
+    - assets/images/ice_climbers.png
+    - assets/images/link.png
+    - assets/images/marth.png
+    - assets/images/pichu.png
+    - assets/images/sheik.png
+    - assets/images/zelda.png
+    - assets/images/kirby.png
+
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

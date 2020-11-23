@@ -1,27 +1,33 @@
 import 'dart:math';
 
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:super_smash_bros_cards/SmashBros/SmashBrosCardDetails.dart';
 import 'Models/SmashBrosPerson.dart';
-import 'NetWorkServices/api_services.dart';
 
-class SmashBrosPersons extends StatefulWidget {
+class SmashBrosPersons extends StatefulWidget
+{
   final String title;
-  Drawer myDrawer;
+  final Drawer myDrawer;
 
   // add a constructor
-  SmashBrosPersons({Key key, this.title, @required this.myDrawer}) : super(key: key);
+  SmashBrosPersons({Key key, this.title, @required this.myDrawer})
+      : super(key: key);
 
   @override
   _SmashBrosPersonsState createState() => _SmashBrosPersonsState();
 }
 
-class _SmashBrosPersonsState extends State<SmashBrosPersons> {
+class _SmashBrosPersonsState extends State<SmashBrosPersons>
+{
   Random r;
   List<Color> colorOptions;
+  List<SmashBrosPerson> persons = [];
+  DatabaseReference refData = FirebaseDatabase.instance.reference();
 
   @override
-  void initState() {
+  void initState()
+  {
     super.initState();
     r = new Random();
     colorOptions = <Color>[
@@ -33,6 +39,23 @@ class _SmashBrosPersonsState extends State<SmashBrosPersons> {
       Colors.pink,
       Colors.orange,
     ];
+
+    refData.once().then((DataSnapshot d) {
+      var maps = d.value;
+
+    // todo add an online image url to each image
+      for (var map in maps)
+      {
+        var tmpMap = Map<String, dynamic>.from(map);
+        setState(() {
+          persons.add(SmashBrosPerson.fromJson(tmpMap));
+        });
+      }
+
+      // persons.forEach((element) {
+      //   print(element);
+      // });
+    });
   }
 
   @override
@@ -42,55 +65,41 @@ class _SmashBrosPersonsState extends State<SmashBrosPersons> {
         title: Text(widget.title),
       ),
       drawer: widget.myDrawer,
-      body: SafeArea(
-        child: FutureBuilder(
-          future: APIServices.fetchSmashBrosPersonList(),
-          builder:
-              (BuildContext c, AsyncSnapshot<List<SmashBrosPerson>> snapshot) {
-            if (!snapshot.hasData) {
-              return CircularProgressIndicator();
-            }
+      body: ListView.builder(
+          padding: const EdgeInsets.all(8),
+          itemCount: persons.length,
+          itemBuilder: (_, int index)
+          {
+            SmashBrosPerson p = persons[index];
 
-            List<SmashBrosPerson> smashBrosPersons = snapshot.data;
-            smashBrosPersons.forEach((e) => print(e));
-
-            return ListView.builder(
-                padding: const EdgeInsets.all(8),
-                itemCount: smashBrosPersons.length,
-                itemBuilder: (BuildContext c, int index) {
-                  SmashBrosPerson p = smashBrosPersons[index];
-
-                  return Container(
-                    // decoration: BoxDecoration(
-                    //   border: Border.all(color: Colors.blueAccent),
-                    // ),
-                    padding: EdgeInsets.all(18.0),
-                    color: colorOptions[r.nextInt(colorOptions.length - 1)],
-                    child: Center(
-                        child: Column(
-                      children: [
-                        // TODO add a picture
-                        ListTile(
-                          title: Text(
-                            p.name,
-                            style: TextStyle(fontSize: 25.0),
-                          ),
-                          onTap: () => Navigator.of(context).push(
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    // we have to pass each person information
-                                    // into this widget, so that we can display
-                                    // its information in a separate page
-                                    SmashBrosCardDetails(person: p)),
-                          ),
-                        ),
-                      ],
-                    )),
-                  );
-                });
-          },
-        ),
-      ),
+            return Container(
+              // decoration: BoxDecoration(
+              //   border: Border.all(color: Colors.blueAccent),
+              // ),
+              padding: EdgeInsets.all(18.0),
+              color: colorOptions[r.nextInt(colorOptions.length - 1)],
+              child: Center(
+                  child: Column(
+                children: [
+                  // TODO add a picture
+                  ListTile(
+                    title: Text(
+                      p.name,
+                      style: TextStyle(fontSize: 25.0),
+                    ),
+                    onTap: () => Navigator.of(context).push(
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              // we have to pass each person information
+                              // into this widget, so that we can display
+                              // its information in a separate page
+                              SmashBrosCardDetails(person: p)),
+                    ),
+                  ),
+                ],
+              )),
+            );
+          }),
     );
   }
 }

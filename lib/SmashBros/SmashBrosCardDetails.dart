@@ -2,13 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:super_smash_bros_cards/Models/SmashBrosPerson.dart';
 import 'package:flutter/foundation.dart';
 
-class SmashBrosCardDetails extends StatelessWidget {
+class SmashBrosCardDetails extends StatelessWidget
+{
   final SmashBrosPerson person;
 
   SmashBrosCardDetails({@required this.person});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context)
+  {
     return Scaffold(
         appBar: AppBar(
           title: Text('Details'),
@@ -23,6 +25,7 @@ class SmashBrosCardDetails extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget>[
+                      Image.asset(person.imgUrl),
                       ListTile(
                         title: Text("ID"),
                         subtitle: Text(person.id.toString()),

@@ -11,6 +11,7 @@ class SmashBrosPerson
   final String universe;
   final String species;
   final String home_world;
+  final String imgUrl;
 
   SmashBrosPerson(
       { @required this.id,
@@ -21,7 +22,8 @@ class SmashBrosPerson
       @required this.console_of_origin,
       @required this.universe,
       @required this.species,
-      @required this.home_world });
+      @required this.home_world,
+      @required this.imgUrl });
 
   // SmashBrosPerson(this._id, this._name,
   //     this._final_smash, this._gender,
@@ -52,18 +54,19 @@ class SmashBrosPerson
   Map<String, dynamic> toMap()
   {
     var m = Map<String, dynamic>();
-    m["name"] = name;
-    m["final_smash"] = final_smash;
-    m["gender"] = gender;
-    m["appears_in"] = appears_in;
-    m["console_of_origin"] = appears_in;
-    m["universe"] = appears_in;
-    m["species"] = appears_in;
-    m["home_world"] = appears_in;
+    m["name"] = this.name;
+    m["final_smash"] = this.final_smash;
+    m["gender"] = this.gender;
+    m["appears_in"] = this.appears_in;
+    m["console_of_origin"] = this.console_of_origin;
+    m["universe"] = this.universe;
+    m["species"] = this.species;
+    m["home_world"] = this.home_world;
+    m["imgUrl"] = this.imgUrl;
 
     if (id != null)
     {
-      m["id"] = id;
+      m["id"] = this.id;
     }
 
     return m;
@@ -80,7 +83,8 @@ class SmashBrosPerson
         console_of_origin : json["console_of_origin"] as String,
         universe : json["universe"] as String,
         species : json["species"] as String,
-        home_world : json["home_world"] as String);
+        home_world : json["home_world"] as String,
+        imgUrl: json["imgUrl"] as String);
   }
 
   @override

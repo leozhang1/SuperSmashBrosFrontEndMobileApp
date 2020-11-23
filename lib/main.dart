@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'SmashBrosPersons.dart';
 
@@ -7,32 +6,34 @@ import 'SmashBrosPersons.dart';
 class MyApp extends StatelessWidget
 {
   final Drawer globalDrawer = Drawer(
-        child: ListView(
-          children: [
-            DrawerHeader(
-              child: Text('Menu'),
-              decoration: BoxDecoration(
-                color: Colors.blueAccent,
-              ),
+    child: ListView(
+      children: [
+        DrawerHeader(
+          child: Text(
+            'Menu',
+            style: TextStyle(
+              fontSize: 24.0,
             ),
-            ListTile(
-              title: Text(
-                'Fighters',
-                style: TextStyle(
-                  fontSize: 24.0,
-                  color: Colors.red
-                ),),
-              // add ontap property
-              // later
-            ),
-          ],
+          ),
+          decoration: BoxDecoration(
+            color: Colors.blueAccent,
+          ),
         ),
-      );
+        ListTile(
+          title: Text(
+            'Fighters',
+            style: TextStyle(fontSize: 24.0, color: Colors.red),
+          ),
+          // add ontap property
+          // later
+        ),
+      ],
+    ),
+  );
 
   // This widget is the root of your application.
   @override
-  Widget build(BuildContext context)
-  {
+  Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
@@ -53,62 +54,30 @@ class MyApp extends StatelessWidget
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       // home: MyHomePage(title: 'hello',),
-      home: SmashBrosPersons(title: 'List of Smash Bros Fighters', myDrawer: globalDrawer,),
+      home: SmashBrosPersons(
+        title: 'List of Smash Bros Fighters',
+        myDrawer: globalDrawer,
+      ),
       // home: PostsPage(),
     );
   }
 }
 
-class MyHttpOverrides extends HttpOverrides{
+class MyHttpOverrides extends HttpOverrides
+{
   @override
-  HttpClient createHttpClient(SecurityContext context){
+  HttpClient createHttpClient(SecurityContext context)
+  {
     return super.createHttpClient(context)
-      ..badCertificateCallback = (X509Certificate cert, String host, int port)=> true;
+      ..badCertificateCallback =
+          (X509Certificate cert, String host, int port) => true;
   }
 }
 
-
-void main()
-{
-  HttpOverrides.global = new MyHttpOverrides();
+void main() {
+  // HttpOverrides.global = new MyHttpOverrides();
   runApp(MyApp());
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -143,7 +112,6 @@ class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
   void _incrementCounter() {
-
     print('hello!');
     setState(() {
       // This call to setState tells the Flutter framework that something has
@@ -207,4 +175,3 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
-
