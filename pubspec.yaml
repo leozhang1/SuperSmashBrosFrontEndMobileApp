@@ -26,11 +26,17 @@ dependencies:
   http: ^0.12.2
   firebase_database: ^4.3.0
 
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^0.1.2
+  tflite: ^1.0.4
+  image_picker: ^0.6.2+3
+
 
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^1.0.0
+  # cupertino_icons: ^1.0.0
 
 dev_dependencies:
   flutter_test:
@@ -49,27 +55,38 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/images/chrom.png
-    - assets/images/ganondorf.png
-    - assets/images/lucina.png
-    - assets/images/mario.png
-    - assets/images/meta_knight.png
-    - assets/images/mewtwo.png
-    - assets/images/mr_game_and_watch.png
-    - assets/images/pit.png
-    - assets/images/roy.png
-    - assets/images/young_link.png
-    - assets/images/bowser.png
-    - assets/images/donkey_kong.png
-    - assets/images/dr_mario.png
-    - assets/images/falco.png
-    - assets/images/ice_climbers.png
-    - assets/images/link.png
-    - assets/images/marth.png
-    - assets/images/pichu.png
-    - assets/images/sheik.png
-    - assets/images/zelda.png
-    - assets/images/kirby.png
+    - assets/
+    # - assets/images/chrom.png
+    # - assets/images/ganondorf.png
+    # - assets/images/lucina.png
+    # - assets/images/mario.png
+    # - assets/images/meta_knight.png
+    # - assets/images/mewtwo.png
+    # - assets/images/mr_game_and_watch.png
+    # - assets/images/pit.png
+    # - assets/images/roy.png
+    # - assets/images/young_link.png
+    # - assets/images/bowser.png
+    # - assets/images/donkey_kong.png
+    # - assets/images/dr_mario.png
+    # - assets/images/falco.png
+    # - assets/images/ice_climbers.png
+    # - assets/images/link.png
+    # - assets/images/marth.png
+    # - assets/images/pichu.png
+    # - assets/images/sheik.png
+    # - assets/images/zelda.png
+    # - assets/images/kirby.png
+    # - assets/images/dark_pit.png
+    # - assets/images/fox.png
+    # - assets/images/luigi.png
+    # - assets/images/ness.png
+    # - assets/images/jigglypuff.png
+    # - assets/images/peach.png
+    # - assets/images/daisy.png
+    # - assets/images/pikachu.png
+    # - assets/images/captain_falcon.png
+    # - assets/images/zero_suit_samus.png
 
 
 

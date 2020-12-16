@@ -297,7 +297,7 @@
     "name": "Dark Pit",
     "species": "Angel",
     "universe": "Kid Icarus",
-    "imgUrl": ""
+    "imgUrl": "assets/images/dark_pit.png"
   },
   {
     "appears_in": "Smash 64, Smash Melee, SmashBrawl, Smash for Wii U/3DS, Smash Ultimate",
@@ -309,7 +309,7 @@
     "name": "Fox McCloud",
     "species": "Fox",
     "universe": "The Legend of Zelda",
-    "imgUrl": ""
+    "imgUrl": "assets/images/fox.png"
   },
   {
     "appears_in": "Smash 64, Smash Melee, SmashBrawl, Smash for Wii U/3DS, Smash Ultimate",
@@ -321,7 +321,7 @@
     "name": "Luigi",
     "species": "Human",
     "universe": "Mario",
-    "imgUrl": ""
+    "imgUrl": "assets/images/luigi.png"
   },
   {
     "appears_in": "Smash 64, Smash Melee, SmashBrawl, Smash for Wii U/3DS, Smash Ultimate",
@@ -333,7 +333,7 @@
     "name": "Ness",
     "species": "Human",
     "universe": "EarthBound",
-    "imgUrl": ""
+    "imgUrl": "assets/images/ness.png"
   },
   {
     "appears_in": "Smash 64, Smash Melee, Smash Brawl, Smash for Wii U/3DS, Smash Ultimate",
@@ -345,7 +345,7 @@
     "name": "Captain Falcon",
     "species": "Human",
     "universe": "F-Zero",
-    "imgUrl": ""
+    "imgUrl": "assets/images/captain_falcon.png"
   },
   {
     "appears_in": "Smash 64, Smash Melee, Smash Brawl, Smash for Wii U/3DS, Smash Ultimate",
@@ -357,7 +357,7 @@
     "name": "Jigglypuff",
     "species": "Balloon",
     "universe": "Pokemon",
-    "imgUrl": ""
+    "imgUrl": "assets/images/jigglypuff.png"
   },
   {
     "appears_in": "Smash Melee, Smash Brawl, Smash for Wii U/3DS, Smash Ultimate",
@@ -369,7 +369,7 @@
     "name": "Peach",
     "species": "Human",
     "universe": "Mario",
-    "imgUrl": ""
+    "imgUrl": "assets/images/peach.png"
   },
   {
     "appears_in": "Smash Ultimate",
@@ -381,7 +381,7 @@
     "name": "Daisy",
     "species": "Human",
     "universe": "Mario",
-    "imgUrl": ""
+    "imgUrl": "assets/images/daisy.png"
   },
   {
     "appears_in": "Smash 64, Smash Melee, SmashBrawl, Smash for Wii U/3DS, Smash Ultimate",
@@ -393,7 +393,7 @@
     "name": "Pikachu",
     "species": "Mouse",
     "universe": "Pokemon",
-    "imgUrl": ""
+    "imgUrl": "assets/images/pikachu.png"
   },
   {
     "appears_in": "Smash Brawl, Smash for Wii U/3DS, Smash Ultimate",
@@ -405,7 +405,7 @@
     "name": "Zero Suit Samus",
     "species": "Human",
     "universe": "Metroid",
-    "imgUrl": ""
+    "imgUrl": "assets/images/zero_suit_samus.png"
   },
   {
     "appears_in": "SmashBrawl, Smash for Wii U/3DS, Smash Ultimate",
